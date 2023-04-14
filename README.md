@@ -1,4 +1,5 @@
 ## OSCP-MACHINES
-
-- [HTB-Return](https://krakeneu.github.io/HTB-Return/)
+- HTB-RETURN
+  - [GITHUB](https://github.com/KrakenEU/HTB-Return)
+  - [PAGES](https://krakeneu.github.io/HTB-Return/)
 
