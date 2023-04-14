@@ -1,4 +1,4 @@
 # kraken.github.io
 
-OSCP-PREP:
-- https://krakeneu.github.io/kraken.github.io-oscp-prep/
+OSCP-MACHINES:
+	[title](https://www.youtube.com/watch?v=o5g-lUuFgpg)
