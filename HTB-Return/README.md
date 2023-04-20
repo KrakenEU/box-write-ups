@@ -25,7 +25,7 @@ Descubrimos varios puertos interesantes abiertos, entre ellos:
 
 Vamos a empezar examinando la web, encontramos un directorio público en el que parece que nos conectamos a una impresora a través de una dirección y el puerto 389.
 
- ![WEB](oscp-prep/HTB-Return/images/web_ini.jpg)
+ ![WEB](images/web_ini.jpg)
  
  
 Podemos comprobar que la contraseña no es una contraseña como tal, es solo texto.
