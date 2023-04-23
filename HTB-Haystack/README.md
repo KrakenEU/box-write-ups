@@ -78,7 +78,7 @@ strings -n 10 needle.jpg
 ```
 Encontramos una cadena en base 64:
 
-*bGEgYWd1amEgZW4gZWwgcGFqYXIgZXMgImNsYXZlIg==
+*bGEgYWd1amEgZW4gZWwgcGFqYXIgZXMgImNsYXZlIg==*
 
 La decodeamos:
 
