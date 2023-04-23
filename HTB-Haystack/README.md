@@ -42,40 +42,51 @@ mv ~/Downloads/Descargas/needle.jpg .
 
 Si usamos exiftool no encontramos gran cosa:
 
-*
-ExifTool Version Number         : 12.16
-File Name                       : needle.jpg
-Directory                       : .
-File Size                       : 179 KiB
-File Modification Date/Time     : 2023:04:21 23:42:24+02:00
-File Access Date/Time           : 2023:04:21 23:42:24+02:00
-File Inode Change Date/Time     : 2023:04:21 23:42:38+02:00
-File Permissions                : rw-r--r--
-File Type                       : JPEG
-File Type Extension             : jpg
-MIME Type                       : image/jpeg
-JFIF Version                    : 1.01
-Exif Byte Order                 : Big-endian (Motorola, MM)
-X Resolution                    : 96
-Y Resolution                    : 96
-Resolution Unit                 : inches
-Software                        : paint.net 4.1.1
-User Comment                    : CREATOR: gd-jpeg v1.0 (using IJG JPEG v80), quality = 90.
-Image Width                     : 1200
-Image Height                    : 803
-Encoding Process                : Baseline DCT, Huffman coding
-Bits Per Sample                 : 8
-Color Components                : 3
-Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
-Image Size                      : 1200x803
-Megapixels                      : 0.964
-*
 
+*ExifTool Version Number         : 12.16
+*File Name                       : needle.jpg
+*Directory                       : .
+*File Size                       : 179 KiB
+*File Modification Date/Time     : 2023:04:21 23:42:24+02:00
+*File Access Date/Time           : 2023:04:21 23:42:24+02:00
+*File Inode Change Date/Time     : 2023:04:21 23:42:38+02:00
+*File Permissions                : rw-r--r--
+*File Type                       : JPEG
+*File Type Extension             : jpg
+*MIME Type                       : image/jpeg
+*JFIF Version                    : 1.01
+*Exif Byte Order                 : Big-endian (Motorola, MM)
+*X Resolution                    : 96
+*Y Resolution                    : 96
+*Resolution Unit                 : inches
+*Software                        : paint.net 4.1.1
+*User Comment                    : CREATOR: gd-jpeg v1.0 (using IJG JPEG v80), quality = 90.
+*Image Width                     : 1200
+*Image Height                    : 803
+*Encoding Process                : Baseline DCT, Huffman coding
+*Bits Per Sample                 : 8
+*Color Components                : 3
+*Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+*Image Size                      : 1200x803
+*Megapixels                      : 0.964
+
+
+Si aplicamos el comando string sin embargo:
+
+```
 strings -n 10 needle.jpg
+```
+Encontramos una cadena en base 64:
 
-bGEgYWd1amEgZW4gZWwgcGFqYXIgZXMgImNsYXZlIg==
+*bGEgYWd1amEgZW4gZWwgcGFqYXIgZXMgImNsYXZlIg==
+
+La decodeamos:
+
+```
 echo 'bGEgYWd1amEgZW4gZWwgcGFqYXIgZXMgImNsYXZlIg==' | base64 -d
-"la aguja en el pajar es "clave"%"
+```
+
+Y encontramos que: `"la aguja en el pajar es "clave"%"`
 
 Nada wfuzz tipico
 
