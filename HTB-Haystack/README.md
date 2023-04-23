@@ -96,11 +96,15 @@ Sin embargo en el puerto 9200:
 wfuzz -c -t 200 --hc=404 -w /usr/share/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt http://10.10.10.115:9200/FUZZ
 ```
 
-*000000687:   200        0 L      1 W        338 Ch      "quotes"
-000003642:   200        0 L      1 W        1010 Ch     "bank"
-000007004:   200        0 L      1 W        2 Ch        "*checkout*"                                                                                      
-000016413:   200        0 L      1 W        4136 Ch     "*"                                                                                               
-000015463:   200        0 L      1 W        2 Ch        "*docroot*"*
+*000000687:   200        0 L      1 W        338 Ch      "quotes"*
+
+*000003642:   200        0 L      1 W        1010 Ch     "bank"*
+
+*000007004:   200        0 L      1 W        2 Ch        "*checkout*"*    
+
+*000016413:   200        0 L      1 W        4136 Ch     "*"*   
+
+*000015463:   200        0 L      1 W        2 Ch        "*docroot*"*
 
 http://10.10.10.115:9200/quotes/_search?pretty=true&size=1000
 
