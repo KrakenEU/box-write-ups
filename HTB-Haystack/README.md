@@ -1,5 +1,16 @@
+# Máquina Haystack
+
+### Intrusión
+
+Comenzamos con nuestros comandos de nmap
+
+```
 sudo nmap -p- --open -sS -n -Pn --min-rate 5000 -vvv 10.10.10.115 -oG allPorts
+```
+```
 sudo nmap -p22,80,9200 -sCV 10.10.10.115 -oN Targeted
+```
+`
 Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-21 23:39 CEST
 Nmap scan report for 10.10.10.115
 Host is up (0.042s latency).
@@ -21,6 +32,7 @@ PORT     STATE SERVICE VERSION
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 13.39 seconds
+`
 
 mv ~/Downloads/Descargas/needle.jpg .
 ExifTool Version Number         : 12.16
