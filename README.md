@@ -2,3 +2,4 @@
 Machines writed up:
 - HTB-RETURN
 - HTB-LOVE
+- HTB-HAYSTACK
