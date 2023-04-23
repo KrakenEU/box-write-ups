@@ -33,8 +33,16 @@ PORT     STATE SERVICE VERSION
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 13.39 seconds
 ```
+Encontramos una imagen al entrar en el puerto 80
 
+Nos la descargamos y la movemos a nuestro directorio de trabajo
+```
 mv ~/Downloads/Descargas/needle.jpg .
+```
+
+Si usamos exiftool no encontramos gran cosa:
+
+*
 ExifTool Version Number         : 12.16
 File Name                       : needle.jpg
 Directory                       : .
@@ -61,6 +69,7 @@ Color Components                : 3
 Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
 Image Size                      : 1200x803
 Megapixels                      : 0.964
+*
 
 strings -n 10 needle.jpg
 
