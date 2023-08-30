@@ -1,5 +1,2 @@
-## OSCP-MACHINES
-Machines writed up:
-- HTB-RETURN
-- HTB-LOVE
-- HTB-HAYSTACK
+You can Find all My Write Ups on my personal blog:
+https://krakeneu.gitbook.io/krakenhackerblog
